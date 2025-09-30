@@ -100,17 +100,37 @@ To use the MCP server in Cursor:
 
 The server provides the following tools:
 
-1. `list_pods(namespace="default")`: Lists all pods in the specified namespace
-   - Shows pod name, status, ready containers, and IP address
-   - Default namespace is "default" if not specified
+1. `list_pods(namespace="default", label_selector=None)`: Lists all pods in the specified namespace
+   - Shows pod name, status, ready containers, IP address, node, and labels
+   - Supports label filtering (e.g., "app=nginx")
+   - Use `namespace="*"` to list pods from all namespaces
 
-2. `list_services(namespace="default")`: Lists all services in the specified namespace
-   - Shows service name, type, cluster IP, and port mappings
-   - Default namespace is "default" if not specified
+2. `list_services(namespace="default", label_selector=None)`: Lists all services in the specified namespace
+   - Shows service name, type, cluster IP, port mappings, and external IPs
+   - Supports label filtering
+   - Use `namespace="*"` to list services from all namespaces
 
-3. `get_cluster_info()`: Gets basic information about the Kubernetes cluster
-   - Shows Kubernetes version, build date, platform
-   - Lists all nodes with their status and version
+3. `list_deployments(namespace="default", label_selector=None)`: Lists all deployments in the specified namespace
+   - Shows deployment name, replica status, and labels
+   - Supports label filtering
+   - Use `namespace="*"` to list deployments from all namespaces
+
+4. `list_configmaps(namespace="default", label_selector=None)`: Lists all configmaps in the specified namespace
+   - Shows configmap name, data entry counts, and labels
+   - Supports label filtering
+   - Use `namespace="*"` to list configmaps from all namespaces
+
+5. `list_secrets(namespace="default", label_selector=None)`: Lists all secrets in the specified namespace
+   - Shows secret name, type, data entry counts, and labels
+   - Supports label filtering
+   - Use `namespace="*"` to list secrets from all namespaces
+
+6. `list_namespaces(label_selector=None)`: Lists all namespaces in the cluster
+   - Shows namespace name, status, and labels
+   - Supports label filtering
+
+7. `get_cluster_info()`: Gets comprehensive information about the Kubernetes cluster
+   - Shows Kubernetes version, build date, platform, and node details
 
 ## Error Handling
 
