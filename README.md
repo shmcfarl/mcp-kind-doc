@@ -1,17 +1,17 @@
-# Kind Kubernetes MCP Server
+# KinD Kubernetes MCP Server
 
-This MCP server provides tools for interacting with a local Kind Kubernetes cluster. It allows you to list pods, services, and get cluster information through the Model Context Protocol.
+This MCP server provides tools for interacting with a local KinD Kubernetes cluster. It allows you to list pods, services, and get cluster information through the Model Context Protocol.
 
 ## Prerequisites
 
 - Python 3.8+
-- Kind Kubernetes cluster running locally: https://kind.sigs.k8s.io/docs/user/quick-start/
+- KinD Kubernetes cluster running locally: https://kind.sigs.k8s.io/docs/user/quick-start/
 - `kubectl` configured to access your cluster
 - pip package manager
 
 ## Creating a Kind Cluster
 
-1. Install Kind if you haven't already:
+1. Install KinD if you haven't already:
 ```bash
 # On macOS with Homebrew
 brew install kind
@@ -36,7 +36,7 @@ Kubernetes control plane is running at https://127.0.0.1:xxxxx
 CoreDNS is running at https://127.0.0.1:xxxxx/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 ```
 
-Now your Kind cluster is ready to use with this MCP server.
+Now your KinD cluster is ready to use with this MCP server.
 
 ## Installation
 
@@ -141,7 +141,7 @@ The server includes robust error handling for common scenarios:
 
 All errors are logged with timestamps and returned as formatted strings with descriptive messages. Example error log:
 ```
-2024-XX-XX XX:XX:XX,XXX - ERROR - Error loading kubeconfig: config file not found
+2025-XX-XX XX:XX:XX,XXX - ERROR - Error loading kubeconfig: config file not found
 ```
 
 ## Development
